@@ -32,9 +32,9 @@ class Filters extends Component {
 
     render() {
         return (
-            <div className="container mx-auto px-32">
-                <div className="mx-auto rounded-lg mb-8 p-4 bg-gray-200 h-auto w-full flex md:flex-row sm:flex-col">
-                    <div className="w-full px-8 md:px-8 md:py-8 sm:py-0">
+            <div className="container mx-auto px-32 md:px-16 sm:px-8">
+                <div className="mx-auto rounded-lg mb-8 p-8 bg-gray-200 h-auto w-full flex md:flex-row md:flex-col">
+                    <div className="w-full px-4 sm:px-2 md:py-0">
                         <Filter
                             handler={this.updateCarb}
                             nutrient="Carbohydrates"
@@ -44,7 +44,7 @@ class Filters extends Component {
                             nutrient="Proteins"
                         />
                     </div>
-                    <div className="w-full px-8 md:px-8 md:py-8 sm:py-0">
+                    <div className="w-full px-4 sm:px-2 md:py-0">
                         <Filter
                             handler={this.updateCalorie}
                             nutrient="Calories"

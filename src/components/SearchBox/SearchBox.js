@@ -5,7 +5,7 @@ import "../../tailwind.generated.css";
 class SearchBox extends Component {
     render() {
         return (
-            <form className="my-16 px-64" autoComplete="off">
+            <form className="my-16 px-32 md:px-16 sm:px-8" autoComplete="off">
                 <TextField
                     id="outlined-full-width"
                     label="Search Your Food"
