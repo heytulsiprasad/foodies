@@ -20,7 +20,7 @@ const Filter = (props) => {
                 defaultValue={50}
                 onChange={(e, val) => handleChange(e, val)}
                 aria-labelledby="discrete-slider-custom"
-                step={5}
+                step={1}
                 valueLabelDisplay="auto"
             />
         </div>
