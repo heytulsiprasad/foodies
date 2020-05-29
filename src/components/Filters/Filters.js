@@ -7,26 +7,35 @@ class Filters extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            carb: 0,
-            protein: 0,
-            calorie: 0,
-            fat: 0,
+            carb: 50,
+            protein: 50,
+            calorie: 50,
+            fat: 50,
+        };
+
+        this.passAbove = () => {
+            let { carb, protein, fat, calorie } = this.state;
+            this.props.nutrients(carb, protein, fat, calorie);
         };
 
         this.updateCarb = (value) => {
             this.setState({ carb: value });
+            this.passAbove();
         };
 
         this.updateProtein = (value) => {
             this.setState({ protein: value });
+            this.passAbove();
         };
 
         this.updateCalorie = (value) => {
             this.setState({ calorie: value });
+            this.passAbove();
         };
 
         this.updateFat = (value) => {
             this.setState({ fat: value });
+            this.passAbove();
         };
     }
 

@@ -5,17 +5,13 @@ import "../../tailwind.generated.css";
 class SearchBox extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            typed: null,
-        };
 
         this.handleFormSubmit = (e) => {
             e.preventDefault();
         };
 
         this.gottaChange = (e) => {
-            this.setState({ typed: e.target.value });
-            console.log(e);
+            this.props.search(e.target.value);
         };
     }
 
