@@ -7,36 +7,72 @@ class Filters extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            carb: 50,
-            protein: 50,
-            calorie: 50,
-            fat: 50,
+            carb: {
+                isOn: false,
+                value: null,
+            },
+            protein: {
+                isOn: false,
+                value: null,
+            },
+            calorie: {
+                isOn: false,
+                value: null,
+            },
+            fat: {
+                isOn: false,
+                value: null,
+            },
         };
 
-        this.passAbove = () => {
-            let { carb, protein, fat, calorie } = this.state;
-            this.props.nutrients(carb, protein, fat, calorie);
-        };
+        this.updateCarb = this.updateCarb.bind(this);
+        this.updateProtein = this.updateProtein.bind(this);
+        this.updateCalorie = this.updateCalorie.bind(this);
+        this.updateFat = this.updateFat.bind(this);
+    }
 
-        this.updateCarb = (value) => {
-            this.setState({ carb: value });
-            this.passAbove();
-        };
+    updateCarb(value, isOn) {
+        this.setState(
+            {
+                carb: { isOn, value },
+            },
+            () => {
+                this.props.passNutrients(this.state);
+            }
+        );
+    }
 
-        this.updateProtein = (value) => {
-            this.setState({ protein: value });
-            this.passAbove();
-        };
+    updateProtein(value, isOn) {
+        this.setState(
+            {
+                protein: { isOn, value },
+            },
+            () => {
+                this.props.passNutrients(this.state);
+            }
+        );
+    }
 
-        this.updateCalorie = (value) => {
-            this.setState({ calorie: value });
-            this.passAbove();
-        };
+    updateCalorie(value, isOn) {
+        this.setState(
+            {
+                calorie: { isOn, value },
+            },
+            () => {
+                this.props.passNutrients(this.state);
+            }
+        );
+    }
 
-        this.updateFat = (value) => {
-            this.setState({ fat: value });
-            this.passAbove();
-        };
+    updateFat(value, isOn) {
+        this.setState(
+            {
+                fat: { isOn, value },
+            },
+            () => {
+                this.props.passNutrients(this.state);
+            }
+        );
     }
 
     render() {
@@ -45,20 +81,23 @@ class Filters extends Component {
                 <div className="mx-auto rounded-lg mb-8 p-8 bg-gray-200 h-auto w-full flex md:flex-row md:flex-col">
                     <div className="w-full px-4 sm:px-2 md:py-0">
                         <Filter
-                            handler={this.updateCarb}
+                            updateHandler={this.updateCarb}
                             nutrient="Carbohydrates"
                         />
                         <Filter
-                            handler={this.updateProtein}
+                            updateHandler={this.updateProtein}
                             nutrient="Proteins"
                         />
                     </div>
                     <div className="w-full px-4 sm:px-2 md:py-0">
                         <Filter
-                            handler={this.updateCalorie}
+                            updateHandler={this.updateCalorie}
                             nutrient="Calories"
                         />
-                        <Filter handler={this.updateFat} nutrient="Fats" />
+                        <Filter
+                            updateHandler={this.updateFat}
+                            nutrient="Fats"
+                        />
                     </div>
                 </div>
             </div>

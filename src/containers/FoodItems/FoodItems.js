@@ -27,12 +27,16 @@ class FoodItems extends Component {
             console.log(foods);
         }
 
-        let {
-            carb = 100,
-            protein = 100,
-            fat = 100,
-            calorie = 100,
-        } = this.props.nutriVal;
+        // Getting values as props returned from Page
+        let { carb, protein, fat, calorie } = this.props.nutriVal;
+
+        // Setting values to our state
+        this.setState({
+            carb,
+            protein,
+            fat,
+            calorie,
+        });
 
         // callAPI("burger", carb, protein, fat, calorie);
         // callAPI("Rava Idli");

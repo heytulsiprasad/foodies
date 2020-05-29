@@ -11,38 +11,49 @@ class Page extends Component {
         this.state = {
             typed: null,
             nutrients: {
-                carb: 50,
-                protein: 50,
-                fat: 50,
-                calorie: 50,
+                carb: {
+                    isOn: false,
+                    value: null,
+                },
+                protein: {
+                    isOn: false,
+                    value: null,
+                },
+                fat: {
+                    isOn: false,
+                    value: null,
+                },
+                calorie: {
+                    isOn: false,
+                    value: null,
+                },
             },
         };
 
-        this.searchValue = (val) => {
-            this.setState({ typed: val });
-        };
-
-        this.filterValue = (carb, protein, fat, calorie) => {
-            this.setState({
-                nutrients: {
-                    carb,
-                    protein,
-                    fat,
-                    calorie,
-                },
-            });
-        };
+        this.searchValue = this.searchValue.bind(this);
+        this.filterValue = this.filterValue.bind(this);
     }
+
+    searchValue = (val) => {
+        this.setState({ typed: val });
+    };
+
+    filterValue = ({ carb, protein, fat, calorie }) => {
+        this.setState({
+            nutrients: {
+                carb,
+                protein,
+                fat,
+                calorie,
+            },
+        });
+    };
 
     render() {
         return (
             <div className={classes.Page}>
                 <SearchBox search={(val) => this.searchValue(val)} />
-                <Filters
-                    nutrients={(carb, protein, fat, calorie) =>
-                        this.filterValue(carb, protein, fat, calorie)
-                    }
-                />
+                <Filters passNutrients={this.filterValue} />
                 <FoodItems
                     queryVal={this.state.typed}
                     nutriVal={this.state.nutrients}

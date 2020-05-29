@@ -1,40 +1,62 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import "../../../tailwind.generated.css";
 import Typography from "@material-ui/core/Typography/Typography";
 import Slider from "@material-ui/core/Slider/Slider";
-import Switch from "../Switch/Switch";
+import Toggle from "../Switch/Switch";
 
-const Filter = (props) => {
-    const [value, setValue] = useState(0);
-    const [isOn, setIsOn] = useState(false);
+class Filter extends Component {
+    constructor(props) {
+        super(props);
 
-    const handleChange = (e, val) => {
-        setValue(val);
-        props.handler(val);
-    };
+        this.state = {
+            value: null,
+            isOn: false,
+        };
 
-    const handleSwitch = () => {
-        setIsOn(!isOn);
+        this.handleSliderChange = this.handleSliderChange.bind(this);
+        this.handleSwitch = this.handleSwitch.bind(this);
     }
 
-    return (
-        <div>
-            <div className="container flex flex-row justify-between">
-                <Typography className="self-center" id="discrete-slider-custom" gutterBottom>
-                    {props.nutrient}
-                </Typography>
-                <Switch changed={handleSwitch} />
+    handleSliderChange(e, val) {
+        this.setState({ value: val }, () => {
+            this.props.updateHandler(this.state.value, this.state.isOn);
+        });
+    }
+
+    handleSwitch(check) {
+        this.state.value === null
+            ? this.setState({ value: 0, isOn: !check }, () =>
+                  this.props.updateHandler(this.state.value, this.state.isOn)
+              )
+            : this.setState({ isOn: !check }, () =>
+                  this.props.updateHandler(this.state.value, this.state.isOn)
+              );
+    }
+
+    render() {
+        return (
+            <div>
+                <div className="container flex flex-row justify-between">
+                    <Typography
+                        className="self-center"
+                        id="discrete-slider-custom"
+                        gutterBottom
+                    >
+                        {this.props.nutrient}
+                    </Typography>
+                    <Toggle passState={(check) => this.handleSwitch(check)} />
+                </div>
+                <Slider
+                    defaultValue={0}
+                    onChange={(e, val) => this.handleSliderChange(e, val)}
+                    aria-labelledby="discrete-slider-custom"
+                    disabled={!this.state.isOn}
+                    step={1}
+                    valueLabelDisplay="auto"
+                />
             </div>
-            <Slider
-                defaultValue={50}
-                onChange={(e, val) => handleChange(e, val)}
-                aria-labelledby="discrete-slider-custom"
-                step={1}
-                disabled={isOn}
-                valueLabelDisplay="auto"
-            />
-        </div>
-    );
-};
+        );
+    }
+}
 
 export default Filter;

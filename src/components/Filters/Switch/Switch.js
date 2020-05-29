@@ -1,20 +1,20 @@
 import React from "react";
 import Switch from "@material-ui/core/Switch";
 
-export default function Switches(props) {
-    const [state, setState] = React.useState({
-        isChecked: true,
+function Switches(props) {
+    const [check, setCheck] = React.useState({
+        isChecked: false,
     });
 
     const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
-        props.changed();
+        setCheck({ [event.target.name]: event.target.checked });
+        props.passState(check.isChecked);
     };
 
     return (
         <div>
             <Switch
-                checked={state.isChecked}
+                checked={check.isChecked}
                 color="primary"
                 onChange={handleChange}
                 name="isChecked"
@@ -23,3 +23,5 @@ export default function Switches(props) {
         </div>
     );
 }
+
+export default Switches;
