@@ -9,6 +9,31 @@ class FoodItems extends Component {
                 <FoodItem />
                 <FoodItem />
                 <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
+                <FoodItem />
             </div>
         );
     }
