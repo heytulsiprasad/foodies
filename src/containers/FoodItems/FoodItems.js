@@ -10,71 +10,82 @@ class FoodItems extends Component {
         this.state = {};
     }
 
-    async componentDidMount() {
-        // Fetch data from API and load it in state
-        async function callAPI(foodName, carb, protein, fat, calorie) {
-            const apiKey = "6b42ea9d2aa945d4890323978a300b93";
-
-            let foods = await (
-                await api.get(
-                    `/complexSearch?apiKey=${apiKey}&query=${foodName}`
-                )
-            ).data;
-
-            let imgBase = await foods.baseUri;
-            let foodItems = await foods.results;
-
-            console.log(foods);
-        }
-
+    static getDerivedStateFromProps(props, state) {
         // Getting values as props returned from Page
-        let { carb, protein, fat, calorie } = this.props.nutriVal;
+        let { carb, protein, fat, calorie } = props.nutriVal;
+        let query = props.queryVal;
 
         // Setting values to our state
-        this.setState({
-            carb,
-            protein,
-            fat,
-            calorie,
-        });
-
-        // callAPI("burger", carb, protein, fat, calorie);
-        // callAPI("Rava Idli");
+        return {
+            typed: query,
+            nutrients: {
+                carb,
+                protein,
+                fat,
+                calorie,
+            },
+            foodItems: [],
+        };
     }
 
+    // componentDidUpdate() {
+    //     async function callAPI() {
+    //         // Fetch data from API and load it in state
+    //         const apiKey = "6b42ea9d2aa945d4890323978a300b93";
+    //         const o = {
+    //             typed: "Pizza",
+    //             nutrients: {
+    //                 carb: 20,
+    //                 protein: 40,
+    //                 fat: 60,
+    //                 calorie: 80,
+    //             },
+    //         };
+
+    //         let foods = await (
+    //             await api.get(
+    //                 `/complexSearch?apiKey=${apiKey}&query=${o.typed}&maxCarbs=${o.nutrients.carb}&maxFats=${o.nutrients.fat}`
+    //             )
+    //         ).data;
+
+    //         console.log(foods);
+
+    //         return foods.results;
+    //     }
+
+    //     const foodData = callAPI();
+    //     this.setState({ foodItems: foodData });
+    // }
+
     render() {
-        return (
-            <div className={classes.FoodItems}>
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-                <FoodItem />
-            </div>
-        );
+        let items = null;
+        let results = this.state.foodItems;
+
+        if (results.length > 0) {
+            items = results.map((item) => {
+                let nuts = null;
+
+                if (item.nutrients.length > 0) {
+                    nuts = item.nutrients.map((i) => {
+                        return {
+                            name: i.name,
+                            amount: i.amount + i.unit,
+                        };
+                    });
+                }
+
+                return (
+                    <FoodItem
+                        id={item.id}
+                        title={item.title}
+                        image={item.image}
+                        nutriVal={nuts}
+                    />
+                );
+            });
+        }
+
+        return <div className={classes.FoodItems}>{items}</div>;
     }
 }
 
