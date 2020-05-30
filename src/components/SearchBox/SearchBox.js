@@ -8,6 +8,7 @@ class SearchBox extends Component {
 
         this.handleFormSubmit = (e) => {
             e.preventDefault();
+            this.props.search(e.target.value);
         };
 
         this.gottaChange = (e) => {

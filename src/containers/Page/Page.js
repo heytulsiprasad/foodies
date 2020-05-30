@@ -8,8 +8,7 @@ class Page extends Component {
     render() {
         return (
             <div>
-                <SearchBar search={(val) => this.searchValue(val)} />
-                <Dropdowns />
+                <SearchBar />
             </div>
         );
     }

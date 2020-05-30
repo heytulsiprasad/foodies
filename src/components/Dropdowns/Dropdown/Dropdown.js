@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -17,34 +17,40 @@ const useStyles = makeStyles((theme) => ({
 
 function SimpleSelect(props) {
     const classes = useStyles();
-    const [age, setAge] = useState("");
+    const [value, setValue] = useState("");
 
     const handleChange = (event) => {
-        setAge(event.target.value);
+        setValue(event.target.value);
     };
 
     return (
         <div className={props.spacing}>
-            <h1 className="pl-3 text-base font-light">Filter by {props.category}</h1>
+            <h1 className="pl-3 text-base font-light">
+                Filter by {props.category}
+            </h1>
             <FormControl
                 variant="filled"
                 className={[classes.formControl, "w-64"].join(" ")}
             >
                 <InputLabel id="demo-simple-select-filled-label">
-                    Age
+                    {props.category}
                 </InputLabel>
                 <Select
                     labelId="demo-simple-select-filled-label"
                     id="demo-simple-select-filled"
-                    value={age}
+                    value={value}
                     onChange={handleChange}
                 >
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    {props.items.map((item, index) => {
+                        return (
+                            <MenuItem key={index} value={item.toLowerCase()}>
+                                {item}
+                            </MenuItem>
+                        );
+                    })}
                 </Select>
             </FormControl>
         </div>

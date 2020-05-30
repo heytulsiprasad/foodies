@@ -1,26 +1,32 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
-import SearchIcon from '@material-ui/icons/Search';
+import SearchIcon from "@material-ui/icons/Search";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        "& > *": {
-            margin: theme.spacing(1),
-        },
-    },
-}));
+class ContainedButtons extends Component {
+    constructor(props) {
+        super(props);
 
-function ContainedButtons() {
-    const classes = useStyles();
+        this.clickHandler = this.clickHandler.bind(this);
+    }
 
-    return (
-        <div className={[classes.root, "mt-3 ml-2 sm:mx-auto"].join(" ")}>
-            <Button variant="contained" className="w-32 h-12 sm:w-48" color="primary">
-                <SearchIcon /> Search
-            </Button>
-        </div>
-    );
+    clickHandler = (e) => {
+        console.dir(e.target);
+    };
+
+    render() {
+        return (
+            <div className="mt-5 ml-2 sm:mx-auto">
+                <Button
+                    onClick={(e) => this.clickHandler(e)}
+                    variant="contained"
+                    className="w-32 h-12 sm:w-48"
+                    color="primary"
+                >
+                    <SearchIcon /> Search
+                </Button>
+            </div>
+        );
+    }
 }
 
 export default ContainedButtons;
