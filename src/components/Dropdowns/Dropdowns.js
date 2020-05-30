@@ -10,7 +10,13 @@ class Dropdowns extends Component {
         this.state = {
             categories: [],
             areas: [],
+            chosen: {
+                categories: null,
+                areas: null,
+            },
         };
+
+        this.chosenCategory = this.chosenCategory.bind(this);
     }
 
     componentDidMount() {
@@ -37,13 +43,40 @@ class Dropdowns extends Component {
             });
     }
 
+    chosenCategory(filterName, filterValue) {
+        if (filterName === "Categories") {
+            this.props.filters(filterValue, null);
+            this.setState({
+                chosen: {
+                    categories: filterValue,
+                    areas: null,
+                },
+            });
+        } else if (filterName === "Areas") {
+            this.props.filters(null, filterValue);
+            this.setState({
+                chosen: {
+                    categories: null,
+                    areas: filterValue,
+                },
+            });
+        }
+    }
+
     render() {
         return (
             <div className="flex flex-row pb-12 w-10/12 sm:flex-col sm:text-center mx-auto justify-around sm:justify-between">
-                <Dropdown category="Categories" items={this.state.categories} />
+                <Dropdown
+                    category="Categories"
+                    chosenCategory={this.chosenCategory}
+                    items={this.state.categories}
+                    active={this.state.chosen.categories}
+                />
                 <Dropdown
                     category="Areas"
+                    chosenCategory={this.chosenCategory}
                     items={this.state.areas}
+                    active={this.state.chosen.areas}
                     spacing="sm:mt-6"
                 />
             </div>

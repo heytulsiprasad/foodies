@@ -19,8 +19,16 @@ function SimpleSelect(props) {
     const classes = useStyles();
     const [value, setValue] = useState("");
 
+    // This turns off the other filter when using a filter
+    useEffect(() => {
+        if (props.active === null) {
+            setValue("");
+        }
+    }, [props.active]);
+
     const handleChange = (event) => {
         setValue(event.target.value);
+        props.chosenCategory(props.category, event.target.value);
     };
 
     return (
@@ -46,7 +54,7 @@ function SimpleSelect(props) {
                     </MenuItem>
                     {props.items.map((item, index) => {
                         return (
-                            <MenuItem key={index} value={item.toLowerCase()}>
+                            <MenuItem key={index} value={item}>
                                 {item}
                             </MenuItem>
                         );
