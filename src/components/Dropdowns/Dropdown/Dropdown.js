@@ -24,7 +24,7 @@ function SimpleSelect(props) {
     };
 
     return (
-        <div>
+        <div className={props.spacing}>
             <h1 className="pl-3 text-base font-light">Filter by {props.category}</h1>
             <FormControl
                 variant="filled"
