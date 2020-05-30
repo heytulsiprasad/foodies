@@ -1,0 +1,54 @@
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+
+const useStyles = makeStyles((theme) => ({
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 120,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
+    },
+}));
+
+function SimpleSelect(props) {
+    const classes = useStyles();
+    const [age, setAge] = useState("");
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
+
+    return (
+        <div>
+            <h1 className="pl-3 text-base font-light">Filter by {props.category}</h1>
+            <FormControl
+                variant="filled"
+                className={[classes.formControl, "w-64"].join(" ")}
+            >
+                <InputLabel id="demo-simple-select-filled-label">
+                    Age
+                </InputLabel>
+                <Select
+                    labelId="demo-simple-select-filled-label"
+                    id="demo-simple-select-filled"
+                    value={age}
+                    onChange={handleChange}
+                >
+                    <MenuItem value="">
+                        <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+            </FormControl>
+        </div>
+    );
+}
+
+export default SimpleSelect;

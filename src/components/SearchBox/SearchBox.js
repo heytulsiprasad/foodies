@@ -19,7 +19,7 @@ class SearchBox extends Component {
         return (
             <form
                 onSubmit={this.handleFormSubmit}
-                className="my-16 px-32 md:px-16 sm:px-8"
+                className="mt-16 mb-8 px-32 md:px-16 sm:px-8"
                 autoComplete="off"
             >
                 <TextField
