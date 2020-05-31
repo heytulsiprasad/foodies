@@ -9,8 +9,7 @@ class Cards extends Component {
         let foods;
 
         if (this.context.meals === null || this.context.meals === undefined) {
-            console.log("Context is empty!");
-            foods = "Nothing to display! 👀";
+            foods = "👀";
         } else {
             foods = this.context.meals.map((food) => {
                 let tags = ["Yummy"];
@@ -35,6 +34,22 @@ class Cards extends Component {
                 );
             });
         }
+
+        if (this.context.isLoading === true) {
+            foods = (
+                <div
+                    className={[
+                        classes.LaSquareSpin,
+                        classes.LaDark,
+                        classes.La2x,
+                        "mx-auto",
+                    ].join(" ")}
+                >
+                    <div></div>
+                </div>
+            );
+        }
+        
         return (
             <div className={[classes.Cards, "sm:gap-10"].join(" ")}>
                 {foods}

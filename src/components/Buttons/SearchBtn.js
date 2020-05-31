@@ -17,6 +17,7 @@ class ContainedButtons extends Component {
     clickHandler = () => {
         // Runs when big blue search button is pressed
         let query = this.props.searchVal;
+        this.context.updateLoading(true);
 
         if (query !== null) {
             axios
@@ -27,6 +28,7 @@ class ContainedButtons extends Component {
                     let meals = res.data.meals; // array of objects
                     this.setState({ meals: meals });
                     this.context.updateMeals({ meals: meals });
+                    this.context.updateLoading(false);
                 });
         }
     };
@@ -44,6 +46,8 @@ class ContainedButtons extends Component {
             // Runs each time an item in dropdown is selected
             let cQuery = this.props.filterVal.category;
             let aQuery = this.props.filterVal.area;
+            this.context.updateLoading(true);
+
             if (cQuery !== null) {
                 axios
                     .get(
@@ -52,6 +56,7 @@ class ContainedButtons extends Component {
                     .then((res) => {
                         this.setState({ meals: res.data.meals });
                         this.context.updateMeals({ meals: res.data.meals });
+                        this.context.updateLoading(false);
                     });
             } else if (aQuery !== null) {
                 axios
@@ -61,6 +66,7 @@ class ContainedButtons extends Component {
                     .then((res) => {
                         this.setState({ meals: res.data.meals });
                         this.context.updateMeals({ meals: res.data.meals });
+                        this.context.updateLoading(false);
                     });
             }
         }
