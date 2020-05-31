@@ -5,7 +5,7 @@ import classes from "./Hero.module.css";
 function Hero() {
     return (
         <div className={classes.Hero}>
-            <div className="font-sans p-6 h-full flex content-between justify-between md:justify-around flex-row md:flex-col">
+            <div className="font-sans py-6 px-12 h-full flex content-between justify-between md:justify-around flex-row md:flex-col">
                 <div className="self-center md:text-center p-4">
                     <h1>Eat Healthy</h1>
                     <h2>Live Well</h2>

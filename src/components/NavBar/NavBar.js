@@ -3,7 +3,7 @@ import "../../tailwind.generated.css";
 
 function NavBar() {
     return (
-        <nav className="flex items-center justify-between flex-wrap bg-gray-800 p-6">
+        <nav className="px-12 flex items-center justify-between flex-wrap bg-gray-800 p-6">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
                 <svg
                     className="fill-current h-8 w-8 mr-2"
