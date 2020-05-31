@@ -13,8 +13,14 @@ class ContainedButtons extends Component {
 
     // This is where we'll do all the API Calls
     clickHandler = () => {
-        console.log(this.props.searchVal);
-        console.table(this.props.filterVal);
+        // console.log(this.props.searchVal);
+        // console.table(this.props.filterVal);
+
+        let query = this.props.searchVal;
+        let cQuery = this.props.filterVal.category;
+        let aQuery = this.props.filterVal.area;
+
+        
     };
 
     render() {

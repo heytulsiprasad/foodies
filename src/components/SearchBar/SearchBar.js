@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, Fragment } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import SearchBtn from "../Buttons/SearchBtn";
 import Dropdowns from "../Dropdowns/Dropdowns";
@@ -11,7 +11,6 @@ function SearchBar(props) {
         area: null,
     });
 
-    
     const getSearchValue = (val) => {
         setSearch(val);
         setSearchActive(val);

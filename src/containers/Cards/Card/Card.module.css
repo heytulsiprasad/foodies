@@ -1,0 +1,8 @@
+.Card {
+    transition: transform .25s ease-out;
+    cursor: pointer;
+}
+
+.Card:hover {
+    transform: translateY(-1rem);
+}
