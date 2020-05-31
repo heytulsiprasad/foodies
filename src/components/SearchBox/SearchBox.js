@@ -41,7 +41,7 @@ class SearchBox extends Component {
             >
                 <TextField
                     id="outlined-full-width"
-                    label="Search Your Food"
+                    label="Search for Food"
                     placeholder="Let's see what you eat!"
                     value={this.state.val}
                     onChange={(e) => this.textChangeHandler(e)}

@@ -27,6 +27,10 @@ class Dropdowns extends Component {
                     areas: null,
                 },
             };
+        } else {
+            return {
+                ...state,
+            };
         }
     }
 
