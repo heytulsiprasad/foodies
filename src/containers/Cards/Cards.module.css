@@ -1,9 +1,16 @@
 .Cards {
     height: auto;
-    width: 90%;
+    width: 80%;
     margin: 5rem auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 3rem;
+    grid-column-gap: 3rem;
+    grid-row-gap: 5rem;
     grid-auto-flow: row;
+}
+
+@media only screen and (max-width: 639px) {
+    .Cards {
+        grid-gap: 2rem;
+    }
 }

@@ -5,7 +5,7 @@ import classes from "./Cards.module.css";
 
 function Cards(props) {
     return (
-        <div className={classes.Cards}>
+        <div className={[classes.Cards, "sm:gap-10"].join(" ")}>
             <Card />
             <Card />
             <Card />
@@ -15,7 +15,7 @@ function Cards(props) {
             <Card />
             <Card />
         </div>
-    )
+    );
 }
 
 export default Cards;
