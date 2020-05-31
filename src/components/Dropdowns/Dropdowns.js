@@ -19,6 +19,17 @@ class Dropdowns extends Component {
         this.chosenCategory = this.chosenCategory.bind(this);
     }
 
+    static getDerivedStateFromProps(props, state) {
+        if (props.active.category === null && props.active.area === null) {
+            return {
+                chosen: {
+                    categories: null,
+                    areas: null,
+                },
+            };
+        }
+    }
+
     componentDidMount() {
         axios
             .get("https://www.themealdb.com/api/json/v1/1/list.php?c=list")

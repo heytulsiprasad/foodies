@@ -5,15 +5,31 @@ import "../../tailwind.generated.css";
 class SearchBox extends Component {
     constructor(props) {
         super(props);
-
-        this.handleFormSubmit = (e) => {
-            e.preventDefault();
-            this.props.search(e.target.value);
+        this.state = {
+            val: "",
         };
 
-        this.gottaChange = (e) => {
-            this.props.search(e.target.value);
-        };
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.textChangeHandler = this.textChangeHandler.bind(this);
+    }
+
+    static getDerivedStateFromProps(props, state) {
+        if (props.active === null) {
+            return { val: "" };
+        }
+        if (props.active !== null) {
+            return { val: props.active };
+        }
+    }
+
+    handleFormSubmit(e) {
+        e.preventDefault();
+        this.props.search(e.target.value);
+    }
+
+    textChangeHandler(e) {
+        this.setState({ val: e.target.value });
+        this.props.search(e.target.value);
     }
 
     render() {
@@ -27,7 +43,8 @@ class SearchBox extends Component {
                     id="outlined-full-width"
                     label="Search Your Food"
                     placeholder="Let's see what you eat!"
-                    onChange={(e) => this.gottaChange(e)}
+                    value={this.state.val}
+                    onChange={(e) => this.textChangeHandler(e)}
                     helperText="Whatever that makes your jaw drop!"
                     fullWidth
                     margin="normal"
