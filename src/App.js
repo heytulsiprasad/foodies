@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 
+import FoodProvider from "./context/FoodProvider";
 import NavBar from "./components/NavBar/NavBar";
 import Hero from "./components/Hero/Hero";
 import Page from "./containers/Page/Page";
@@ -9,13 +10,13 @@ import classes from "./App.module.css";
 
 function App() {
     return (
-        <Fragment>
+        <FoodProvider>
             <div className={classes.Home}>
                 <NavBar />
                 <Hero />
             </div>
             <Page />
-        </Fragment>
+        </FoodProvider>
     );
 }
 export default App;

@@ -1,239 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
 
 import Card from "./Card/Card";
 import classes from "./Cards.module.css";
+import FoodContext from "../../context/FoodContext";
 
-const foods = [
-    {
-        idMeal: "52915",
-        strMeal: "French Omelette",
-        strDrinkAlternate: null,
-        strCategory: "Miscellaneous",
-        strArea: "French",
-        strInstructions:
-            "Get everything ready. Warm a 20cm (measured across the top) non-stick frying pan on a medium heat. Crack the eggs into a bowl and beat them with a fork so they break up and mix, but not as completely as you would for scrambled egg. With the heat on medium-hot, drop one knob of butter into the pan. It should bubble and sizzle, but not brown. Season the eggs with the Parmesan and a little salt and pepper, and pour into the pan.\r\nLet the eggs bubble slightly for a couple of seconds, then take a wooden fork or spatula and gently draw the mixture in from the sides of the pan a few times, so it gathers in folds in the centre. Leave for a few seconds, then stir again to lightly combine uncooked egg with cooked. Leave briefly again, and when partly cooked, stir a bit faster, stopping while there’s some barely cooked egg left. With the pan flat on the heat, shake it back and forth a few times to settle the mixture. It should slide easily in the pan and look soft and moist on top. A quick burst of heat will brown the underside.\r\nGrip the handle underneath. Tilt the pan down away from you and let the omelette fall to the edge. Fold the side nearest to you over by a third with your fork, and keep it rolling over, so the omelette tips onto a plate – or fold it in half, if that’s easier. For a neat finish, cover the omelette with a piece of kitchen paper and plump it up a bit with your fingers. Rub the other knob of butter over to glaze. Serve immediately.",
-        strMealThumb:
-            "https://www.themealdb.com/images/media/meals/yvpuuy1511797244.jpg",
-        strTags: "Egg",
-        strYoutube: "https://www.youtube.com/watch?v=qXPhVYpQLPA",
-        strIngredient1: "Eggs",
-        strIngredient2: "Butter",
-        strIngredient3: "Parmesan",
-        strIngredient4: "Tarragon",
-        strIngredient5: "Parsley",
-        strIngredient6: "Chives",
-        strIngredient7: "Gruyère",
-        strIngredient8: "",
-        strIngredient9: "",
-        strIngredient10: "",
-        strIngredient11: "",
-        strIngredient12: "",
-        strIngredient13: "",
-        strIngredient14: "",
-        strIngredient15: "",
-        strIngredient16: "",
-        strIngredient17: "",
-        strIngredient18: "",
-        strIngredient19: "",
-        strIngredient20: "",
-        strMeasure1: "3",
-        strMeasure2: "2 knobs",
-        strMeasure3: "1 tsp ",
-        strMeasure4: "3 chopped",
-        strMeasure5: "1 tbs chopped",
-        strMeasure6: "1 tbs chopped",
-        strMeasure7: "4 tbs",
-        strMeasure8: "",
-        strMeasure9: "",
-        strMeasure10: "",
-        strMeasure11: "",
-        strMeasure12: "",
-        strMeasure13: "",
-        strMeasure14: "",
-        strMeasure15: "",
-        strMeasure16: "",
-        strMeasure17: "",
-        strMeasure18: "",
-        strMeasure19: "",
-        strMeasure20: "",
-        strSource:
-            "https://www.bbcgoodfood.com/recipes/1669/ultimate-french-omelette",
-        dateModified: null,
-    },
-    {
-        idMeal: "52903",
-        strMeal: "French Onion Soup",
-        strDrinkAlternate: null,
-        strCategory: "Side",
-        strArea: "French",
-        strInstructions:
-            "Melt the butter with the oil in a large heavy-based pan. Add the onions and fry with the lid on for 10 mins until soft. Sprinkle in the sugar and cook for 20 mins more, stirring frequently, until caramelised. The onions should be really golden, full of flavour and soft when pinched between your fingers. Take care towards the end to ensure that they don’t burn.\r\nAdd the garlic for the final few mins of the onions’ cooking time, then sprinkle in the flour and stir well. Increase the heat and keep stirring as you gradually add the wine, followed by the hot stock. Cover and simmer for 15-20 mins.\r\nTo serve, turn on the grill, and toast the bread. Ladle the soup into heatproof bowls. Put a slice or two of toast on top of the bowls of soup, and pile on the cheese. Grill until melted. Alternatively, you can complete the toasts under the grill, then serve them on top.",
-        strMealThumb:
-            "https://www.themealdb.com/images/media/meals/xvrrux1511783685.jpg",
-        strTags: "Soup",
-        strYoutube: "https://www.youtube.com/watch?v=-DLDMQucqDI",
-        strIngredient1: "Butter",
-        strIngredient2: "Olive Oil",
-        strIngredient3: "Onion",
-        strIngredient4: "Sugar",
-        strIngredient5: "Garlic Clove",
-        strIngredient6: "Plain Flour",
-        strIngredient7: "Dry White Wine",
-        strIngredient8: "Beef Stock",
-        strIngredient9: "Bread",
-        strIngredient10: "Gruyère",
-        strIngredient11: "",
-        strIngredient12: "",
-        strIngredient13: "",
-        strIngredient14: "",
-        strIngredient15: "",
-        strIngredient16: "",
-        strIngredient17: "",
-        strIngredient18: "",
-        strIngredient19: "",
-        strIngredient20: "",
-        strMeasure1: "50g",
-        strMeasure2: "1 tbs",
-        strMeasure3: "1 kg",
-        strMeasure4: "1 tsp ",
-        strMeasure5: "4 sliced",
-        strMeasure6: "2 tbs",
-        strMeasure7: "250ml",
-        strMeasure8: "1L",
-        strMeasure9: "4 sliced",
-        strMeasure10: "140g",
-        strMeasure11: "",
-        strMeasure12: "",
-        strMeasure13: "",
-        strMeasure14: "",
-        strMeasure15: "",
-        strMeasure16: "",
-        strMeasure17: "",
-        strMeasure18: "",
-        strMeasure19: "",
-        strMeasure20: "",
-        strSource:
-            "https://www.bbcgoodfood.com/recipes/3020694/french-onion-soup",
-        dateModified: null,
-    },
-    {
-        idMeal: "52815",
-        strMeal: "French Lentils With Garlic and Thyme",
-        strDrinkAlternate: null,
-        strCategory: "Miscellaneous",
-        strArea: "French",
-        strInstructions:
-            "Place a large saucepan over medium heat and add oil. When hot, add chopped vegetables and sauté until softened, 5 to 10 minutes.\r\nAdd 6 cups water, lentils, thyme, bay leaves and salt. Bring to a boil, then reduce to a fast simmer.\r\nSimmer lentils until they are tender and have absorbed most of the water, 20 to 25 minutes. If necessary, drain any excess water after lentils have cooked. Serve immediately, or allow them to cool and reheat later.\r\nFor a fuller taste, use some chicken stock and reduce the water by the same amount.",
-        strMealThumb:
-            "https://www.themealdb.com/images/media/meals/vwwspt1487394060.jpg",
-        strTags: "Pulse",
-        strYoutube: "https://www.youtube.com/watch?v=CrlTS1mJQMA",
-        strIngredient1: "Olive Oil",
-        strIngredient2: "Onion",
-        strIngredient3: "Garlic",
-        strIngredient4: "Carrot",
-        strIngredient5: "French Lentils",
-        strIngredient6: "Thyme",
-        strIngredient7: "Bay Leaf",
-        strIngredient8: "Salt",
-        strIngredient9: "Celery",
-        strIngredient10: "",
-        strIngredient11: "",
-        strIngredient12: "",
-        strIngredient13: "",
-        strIngredient14: "",
-        strIngredient15: "",
-        strIngredient16: "",
-        strIngredient17: "",
-        strIngredient18: "",
-        strIngredient19: "",
-        strIngredient20: "",
-        strMeasure1: "3 tablespoons",
-        strMeasure2: "1",
-        strMeasure3: "2 cloves",
-        strMeasure4: "1",
-        strMeasure5: "2 1/4 cups",
-        strMeasure6: "1 teaspoon",
-        strMeasure7: "3",
-        strMeasure8: "1 tablespoon",
-        strMeasure9: "2 sticks",
-        strMeasure10: "",
-        strMeasure11: "",
-        strMeasure12: "",
-        strMeasure13: "",
-        strMeasure14: "",
-        strMeasure15: "",
-        strMeasure16: "",
-        strMeasure17: "",
-        strMeasure18: "",
-        strMeasure19: "",
-        strMeasure20: "",
-        strSource: "",
-        dateModified: null,
-    },
-    {
-        idMeal: "52996",
-        strMeal: "French Onion Chicken with Roasted Carrots & Mashed Potatoes",
-        strDrinkAlternate: null,
-        strCategory: "Chicken",
-        strArea: "American",
-        strInstructions:
-            "1\r\n\r\nPreheat oven to 425 degrees. Wash and dry all produce. Trim, peel, and cut carrots on a diagonal into ¼-inch-thick pieces. Dice potatoes into ½-inch pieces. Halve, peel, and thinly slice onion.\r\n\r\n2\r\n\r\nToss carrots on a baking sheet with a drizzle of oil, salt, and pepper. Roast until browned and tender, 15-20 minutes.\r\n\r\n3\r\n\r\nMeanwhile, place potatoes in a medium pot with enough salted water to cover by 2 inches. Bring to a boil and cook until tender, 12-15 minutes. Drain and return potatoes to pot; cover to keep warm.\r\n\r\n4\r\n\r\nWhile potatoes cook, heat a drizzle of oil in a large pan over medium-high heat. Add onion and cook, stirring occasionally, until lightly browned and softened, 8-10 minutes. Sprinkle with 1 tsp sugar (2 tsp for 4 servings). Stir in stock concentrate and 2 TBSP water (¼ cup for 4); season with salt and pepper. Cook until jammy, 2-3 minutes more. Turn off heat; transfer to a small bowl. Wash out pan.\r\n\r\n5\r\n\r\nPat chicken dry with paper towels; season all over with salt and pepper. Heat a drizzle of oil in pan used for onion over medium-high heat. Add chicken and cook until browned and cooked through, 5-6 minutes per side. In the last 1-2 minutes of cooking, top with caramelized onion and cheese. Cover pan until cheese melts. (If your pan doesn’t have a lid, cover with a baking sheet!)\r\n\r\n6\r\n\r\nHeat pot with drained potatoes over low heat; mash with sour cream, 2 TBSP butter (4 TBSP for 4 servings), salt, pepper, and a splash of water (or milk, for extra richness) until smooth. Divide chicken, roasted carrots, and mashed potatoes between plates.",
-        strMealThumb:
-            "https://www.themealdb.com/images/media/meals/b5ft861583188991.jpg",
-        strTags: null,
-        strYoutube: "",
-        strIngredient1: "Chicken Breasts",
-        strIngredient2: "Carrots",
-        strIngredient3: "Small Potatoes",
-        strIngredient4: "Onion",
-        strIngredient5: "Beef Stock",
-        strIngredient6: "Mozzarella",
-        strIngredient7: "Sour Cream",
-        strIngredient8: "Butter",
-        strIngredient9: "Sugar",
-        strIngredient10: "Vegetable Oil",
-        strIngredient11: "Salt",
-        strIngredient12: "Pepper",
-        strIngredient13: "",
-        strIngredient14: "",
-        strIngredient15: "",
-        strIngredient16: "",
-        strIngredient17: "",
-        strIngredient18: "",
-        strIngredient19: "",
-        strIngredient20: "",
-        strMeasure1: "2",
-        strMeasure2: "12 ounces",
-        strMeasure3: "5",
-        strMeasure4: "1",
-        strMeasure5: "1",
-        strMeasure6: "1 1/2 cup ",
-        strMeasure7: "2 tbsp",
-        strMeasure8: " ",
-        strMeasure9: " ",
-        strMeasure10: " ",
-        strMeasure11: " ",
-        strMeasure12: " ",
-        strMeasure13: " ",
-        strMeasure14: " ",
-        strMeasure15: " ",
-        strMeasure16: " ",
-        strMeasure17: " ",
-        strMeasure18: " ",
-        strMeasure19: " ",
-        strMeasure20: " ",
-        strSource: "",
-        dateModified: null,
-    },
-];
+class Cards extends Component {
+    render() {
+        let foods;
 
-function Cards(props) {
-    return (
-        <div className={[classes.Cards, "sm:gap-10"].join(" ")}>
-            {foods.map((food) => {
+        if (this.context.meals === null || this.context.meals === undefined) {
+            console.log("Context is empty!");
+            foods = "Nothing to display! 👀";
+        } else {
+            foods = this.context.meals.map((food) => {
                 return (
                     <Card
+                        key={food.idMeal}
                         id={food.idMeal}
                         title={food.strMeal}
                         category={food.strCategory}
@@ -242,9 +24,16 @@ function Cards(props) {
                         tags={food.strTags}
                     />
                 );
-            })}
-        </div>
-    );
+            });
+        }
+        return (
+            <div className={[classes.Cards, "sm:gap-10"].join(" ")}>
+                {foods}
+            </div>
+        );
+    }
 }
+
+Cards.contextType = FoodContext;
 
 export default Cards;
