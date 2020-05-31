@@ -24,7 +24,7 @@ class SearchBox extends Component {
 
     handleFormSubmit(e) {
         e.preventDefault();
-        this.props.search(e.target.value);
+        this.props.isPressed();
     }
 
     textChangeHandler(e) {
