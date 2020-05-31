@@ -13,6 +13,15 @@ class Cards extends Component {
             foods = "Nothing to display! 👀";
         } else {
             foods = this.context.meals.map((food) => {
+                let tags = ["Yummy"];
+                if (food.strTags !== undefined && food.strTags !== null) {
+                    if (food.strTags.includes(",")) {
+                        tags = food.strTags.split(",");
+                    } else {
+                        tags = [food.strTags];
+                    }
+                }
+
                 return (
                     <Card
                         key={food.idMeal}
@@ -21,7 +30,7 @@ class Cards extends Component {
                         category={food.strCategory}
                         area={food.strArea}
                         thumb={food.strMealThumb}
-                        tags={food.strTags}
+                        tags={tags}
                     />
                 );
             });

@@ -14,9 +14,16 @@ function Card(props) {
                     </p>
                 </div>
                 <div className="px-6 py-4">
-                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-                        {props.tags ? props.tags : "Yummy"}
-                    </span>
+                    {props.tags.map((tag, index) => {
+                        return (
+                            <span
+                                key={index}
+                                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+                            >
+                                {tag}
+                            </span>
+                        );
+                    })}
                 </div>
             </div>
         </div>
