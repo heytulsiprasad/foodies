@@ -12,8 +12,8 @@ function App() {
         <Router>
             <FoodProvider>
                 <Switch>
-                    <Route path="/new" component={Recipes} />
-                    <Route path="/" component={Page} />
+                    <Route path="/" exact component={Page} />
+                    <Route path="/food/:id" component={Recipes} />
                 </Switch>
             </FoodProvider>
         </Router>

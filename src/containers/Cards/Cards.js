@@ -23,7 +23,7 @@ class Cards extends Component {
                 }
 
                 return (
-                    <Link key={food.idMeal} to={`/${food.idMeal}`}>
+                    <Link key={food.idMeal} to={`/food/${food.idMeal}`}>
                         <Card
                             title={food.strMeal}
                             category={food.strCategory}

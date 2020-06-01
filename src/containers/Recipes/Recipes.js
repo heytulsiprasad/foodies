@@ -10,7 +10,7 @@ class Recipes extends Component {
         return (
             <div className={classes.Recipe}>
                 <NavBar />
-                <Recipe expand={classes.Expand} />
+                <Recipe expand={classes.Expand} id={this.props.match.params.id} />
                 <Footer />
             </div>
         );

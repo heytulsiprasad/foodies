@@ -19,7 +19,6 @@ class ContainedButtons extends Component {
         let query = this.props.searchVal;
 
         if (query !== null) {
-            console.log("Hi")
             this.context.updateLoading(true);
 
             axios
