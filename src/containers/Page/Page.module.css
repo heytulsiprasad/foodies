@@ -1,4 +1,4 @@
-html {
+/* html {
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -6,4 +6,10 @@ html {
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
+} */
+
+.Home {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
 }

@@ -1,0 +1,9 @@
+.Recipe {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.Expand {
+    flex-grow: 1;
+}

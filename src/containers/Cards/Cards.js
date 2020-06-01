@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import Card from "./Card/Card";
 import classes from "./Cards.module.css";
@@ -22,15 +23,15 @@ class Cards extends Component {
                 }
 
                 return (
-                    <Card
-                        key={food.idMeal}
-                        id={food.idMeal}
-                        title={food.strMeal}
-                        category={food.strCategory}
-                        area={food.strArea}
-                        thumb={food.strMealThumb}
-                        tags={tags}
-                    />
+                    <Link key={food.idMeal} to={`/${food.idMeal}`}>
+                        <Card
+                            title={food.strMeal}
+                            category={food.strCategory}
+                            area={food.strArea}
+                            thumb={food.strMealThumb}
+                            tags={tags}
+                        />
+                    </Link>
                 );
             });
         }
@@ -49,7 +50,7 @@ class Cards extends Component {
                 </div>
             );
         }
-        
+
         return (
             <div className={[classes.Cards, "sm:gap-10"].join(" ")}>
                 {foods}

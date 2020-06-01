@@ -17,9 +17,11 @@ class ContainedButtons extends Component {
     clickHandler = () => {
         // Runs when big blue search button is pressed
         let query = this.props.searchVal;
-        this.context.updateLoading(true);
 
         if (query !== null) {
+            console.log("Hi")
+            this.context.updateLoading(true);
+
             axios
                 .get(
                     `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
@@ -35,7 +37,6 @@ class ContainedButtons extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (
-            prevProps.searchVal !== this.props.searchVal ||
             prevProps.filterVal !== this.props.filterVal ||
             prevProps.isPressed !== this.props.isPressed
         ) {
@@ -71,10 +72,6 @@ class ContainedButtons extends Component {
             }
         }
     }
-
-    // componentDidUpdate() {
-    //
-    // }
 
     render() {
         return (
