@@ -10,7 +10,7 @@ class Cards extends Component {
         let foods;
 
         if (this.context.meals === null || this.context.meals === undefined) {
-            foods = "👀";
+            foods = "Nothing to display 👀";
         } else {
             foods = this.context.meals.map((food) => {
                 let tags = ["Yummy"];

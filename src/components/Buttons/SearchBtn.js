@@ -46,19 +46,24 @@ class ContainedButtons extends Component {
             // Runs each time an item in dropdown is selected
             let cQuery = this.props.filterVal.category;
             let aQuery = this.props.filterVal.area;
-            this.context.updateLoading(true);
 
             if (cQuery !== null) {
+                this.context.updateLoading(true);
                 axios
                     .get(
                         `https://www.themealdb.com/api/json/v1/1/filter.php?c=${cQuery}`
                     )
                     .then((res) => {
-                        this.setState({ meals: res.data.meals });
-                        this.context.updateMeals({ meals: res.data.meals });
+                        this.setState({
+                            meals: res.data.meals,
+                        });
+                        this.context.updateMeals({
+                            meals: res.data.meals,
+                        });
                         this.context.updateLoading(false);
                     });
             } else if (aQuery !== null) {
+                this.context.updateLoading(true);
                 axios
                     .get(
                         `https://www.themealdb.com/api/json/v1/1/filter.php?a=${aQuery}`

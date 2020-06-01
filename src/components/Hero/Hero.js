@@ -12,11 +12,13 @@ function Hero() {
                 </div>
                 <div className="self-center md:text-justify max-w-xl p-4">
                     <p className="text-base">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Harum sit sequi nulla ipsa aliquid esse vero veniam qui,
-                        repellendus dolor tenetur, sapiente explicabo quod hic
-                        reprehenderit. Sapiente doloremque fugit alias at totam.
-                        Consectetur, facere natus.
+                        Eating healthy is important for everyone especially
+                        teens. A healthy diet is the key to being fit. It is
+                        unlike any diet. You will feel so pure, balanced, and
+                        alert. It even prevents some health issues. You will
+                        love your body and your body will love you if you start
+                        eating healthy. There are so many different reasons why
+                        eating healthy is important.
                     </p>
                 </div>
             </div>
