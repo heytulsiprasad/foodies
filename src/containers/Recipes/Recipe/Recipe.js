@@ -146,11 +146,19 @@ function Recipe(props) {
                 <div className="container p-12">
                     <div className="flex hero flex-row lg:flex-col mt-4 mb-8">
                         <div className="p-6 my-auto">
-                            <img
-                                src={recipe.strMealThumb}
-                                className={classes.Image}
-                                alt="foodies"
-                            />
+                            <a
+                                href={
+                                    recipe.strSource
+                                        ? recipe.strSource
+                                        : `/food/${recipe.idMeal}`
+                                }
+                            >
+                                <img
+                                    src={recipe.strMealThumb}
+                                    className={classes.Image}
+                                    alt="foodies"
+                                />
+                            </a>
                         </div>
                         <div className="container">
                             <h1 className="text-6xl lg:text-center pl-6 py-2">
