@@ -111,7 +111,7 @@ function Recipe(props) {
             items.push(recipe[`strIngredient${i}`]);
         }
         items = items.filter((item) => {
-            return item !== "";
+            return item !== "" && item !== null;
         });
 
         let amt = [];
@@ -119,7 +119,7 @@ function Recipe(props) {
             amt.push(recipe[`strMeasure${i}`]);
         }
         amt = amt.filter((item) => {
-            return item !== "";
+            return item !== "" && item !== null;
         });
 
         let ingredients = [];
@@ -155,13 +155,16 @@ function Recipe(props) {
                             >
                                 <img
                                     src={recipe.strMealThumb}
-                                    className={classes.Image}
+                                    className={[
+                                        classes.Image,
+                                        "shadow-xl",
+                                    ].join(" ")}
                                     alt="foodies"
                                 />
                             </a>
                         </div>
                         <div className="container">
-                            <h1 className="text-6xl lg:text-center pl-6 py-2">
+                            <h1 className="text-6xl lg:text-center leading-tight mb-2 pl-6 py-2">
                                 {recipe.strMeal}
                             </h1>
                             <div className="container lg:mx-auto pl-6 py-1 w-5/6">
@@ -171,7 +174,10 @@ function Recipe(props) {
                     </div>
                     <div className="container px-6 mt-6 mb-12">
                         <h1 className="text-4xl text-center font-bold py-2">
-                            How to Cook this?
+                            How to Cook this?{" "}
+                            <span role="img" aria-label="icon">
+                                😋
+                            </span>
                         </h1>
                         <p className="text-lg text-gray-800 text-justify sm:text-left px-12 md:px-4 sm:px-0 my-4 py-6">
                             {rules.join(".")}
@@ -179,9 +185,10 @@ function Recipe(props) {
                     </div>
                     {video ? (
                         <div
-                            className={[classes.VideoContainer, "mx-auto"].join(
-                                " "
-                            )}
+                            className={[
+                                classes.VideoContainer,
+                                "mx-auto shadow-2xl",
+                            ].join(" ")}
                         >
                             <iframe
                                 title={recipe.idMeal}

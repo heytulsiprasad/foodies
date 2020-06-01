@@ -34,6 +34,12 @@
     object-fit: cover;
     height: 25rem;
     border-radius: 10px;
+    transition: transform .25s ease-out;
+    cursor: pointer;
+}
+
+.Image:hover {
+    transform: translateY(-.5rem);
 }
 
 /*!
