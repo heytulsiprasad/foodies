@@ -9,14 +9,16 @@ import "./tailwind.generated.css";
 
 function App() {
     return (
-        <Router>
-            <FoodProvider>
-                <Switch>
-                    <Route path="/" exact component={Page} />
-                    <Route path="/food/:id" component={Recipes} />
-                </Switch>
-            </FoodProvider>
-        </Router>
+        <div className="container main bg-background-secondary theme-light">
+            <Router>
+                <FoodProvider>
+                    <Switch>
+                        <Route path="/" exact component={Page} />
+                        <Route path="/food/:id" component={Recipes} />
+                    </Switch>
+                </FoodProvider>
+            </Router>
+        </div>
     );
 }
 export default App;

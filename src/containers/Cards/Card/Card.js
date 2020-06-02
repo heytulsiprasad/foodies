@@ -4,11 +4,13 @@ import classes from "./Card.module.css";
 function Card(props) {
     return (
         <div className={classes.Card}>
-            <div className="mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg">
+            <div className="mx-auto bg-background-primary max-w-sm rounded-lg overflow-hidden shadow-lg">
                 <img className="w-full" src={props.thumb} alt={props.title} />
                 <div className="px-6 py-4">
-                    <div className="font-bold text-xl mb-2">{props.title}</div>
-                    <p className="text-gray-700 text-base">
+                    <div className="font-bold text-xl mb-2 text-copy-primary">
+                        {props.title}
+                    </div>
+                    <p className="text-copy-secondary text-base">
                         Hi! I belong to {props.category} Category and I am from{" "}
                         {props.area} Region!
                     </p>
@@ -18,7 +20,7 @@ function Card(props) {
                         return (
                             <span
                                 key={index}
-                                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+                                className="inline-block text-copy-primary mt-1 bg-background-tertiary rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
                             >
                                 {tag}
                             </span>

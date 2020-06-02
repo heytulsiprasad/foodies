@@ -1,12 +1,11 @@
 .Hero {
     flex-grow: 1;
-
     background: url(../../assets/Foody.jpg);
     width: 100%;
     background-size: cover;
     background-position: center;
     background-color: #000000bd;
-    background-blend-mode: darken;
+    background-blend-mode: hue;
     color: #fff;
 }
 

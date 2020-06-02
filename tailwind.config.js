@@ -14,7 +14,19 @@ module.exports = {
 
             sm: { max: "639px" },
             // => @media (max-width: 639px) { ... }
-        }
+        },
+        colors: {
+            background: {
+                primary: "var(--bg-background-primary)",
+                secondary: "var(--bg-background-secondary)",
+                tertiary: "var(--bg-background-tertiary)",
+            },
+
+            copy: {
+                primary: "var(--text-copy-primary)",
+                secondary: "var(--text-copy-secondary)",
+            },
+        },
     },
     variants: {},
     plugins: [],

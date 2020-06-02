@@ -4,7 +4,7 @@ import { faCoffee, faHeart, faCode } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
     return (
-        <div className="flex flex-row justify-between bg-gray-800 h-32">
+        <div className="bg-background-tertiary flex flex-row justify-between bg-gray-800 h-32">
             <div className="container flex flex-col justify-center ml-12">
                 <p className="text-gray-100 text-sm mb-1">Powered by MealDB</p>
                 <p className="text-gray-500 text-lg">Proudly built with ⚛</p>

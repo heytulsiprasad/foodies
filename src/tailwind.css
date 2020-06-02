@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.theme-light {
+    --bg-background-primary: #FFFFFF;
+    --bg-background-secondary: #EFF0F2;
+    --bg-background-tertiary: #DEE4E7;
+    --text-copy-primary: #2d3748;
+    --text-copy-secondary: #4e545e;
+}
+
+.theme-dark {
+    --bg-background-primary: #212324;
+    --bg-background-secondary: #212832;
+    --bg-background-tertiary: #39434F;
+    --text-copy-primary: #cbd5e0;
+    --text-copy-secondary: #838991;
+}
