@@ -1,10 +1,13 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, Fragment, useContext } from "react";
 import axios from "axios";
 
 import classes from "./Recipe.module.css";
 import Table from "../Table/Table";
+import ThemeContext from "../../../context/ThemeContext";
 
 function Recipe(props) {
+    const context = useContext(ThemeContext);
+
     const [recipe, setRecipe] = useState();
     const [loading, setLoading] = useState(false);
 
@@ -26,13 +29,21 @@ function Recipe(props) {
             });
     };
 
+    let theme;
+
+    if (context.theme === "light") {
+        theme = "#212832";
+    } else {
+        theme = "#FFF";
+    }
+
     let food;
 
     if (loading) {
         food = (
             <div className={props.expand}>
                 <div
-                    style={{ color: "#fff" }}
+                    style={{ color: theme }}
                     className={[
                         classes.LaSquareSpin,
                         classes.La2x,

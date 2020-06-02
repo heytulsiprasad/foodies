@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React, { Fragment } from "react";
 
-import FoodContext from "../../context/FoodContext";
 import classes from "./Page.module.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Cards from "../Cards/Cards";
@@ -9,10 +8,8 @@ import Hero from "../../components/Hero/Hero";
 import Footer from "../../components/Footer/Footer";
 
 const Page = () => {
-    const context = useContext(FoodContext);
-
     return (
-        <div className={`theme-${context.theme}`}>
+        <Fragment>
             <div className={classes.Home}>
                 <NavBar />
                 <Hero />
@@ -20,7 +17,7 @@ const Page = () => {
             <SearchBar />
             <Cards />
             <Footer />
-        </div>
+        </Fragment>
     );
 };
 

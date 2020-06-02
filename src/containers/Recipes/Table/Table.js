@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Table from "@material-ui/core/Table";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import TableBody from "@material-ui/core/TableBody";
@@ -7,12 +7,15 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import ThemeContext from "../../../context/ThemeContext";
 
 function createData(item, amount) {
     return { item, amount };
 }
 
 function SimpleTable(props) {
+    const context = useContext(ThemeContext);
+
     const rows = [];
 
     props.ingredients.forEach((i) => {
@@ -25,8 +28,22 @@ function SimpleTable(props) {
         },
     });
 
+    const lightTheme = createMuiTheme({
+        palette: {
+            type: "light",
+        },
+    });
+
+    let theme;
+
+    if (context.theme === "light") {
+        theme = lightTheme;
+    } else {
+        theme = darkTheme;
+    }
+
     return (
-        <ThemeProvider theme={darkTheme}>
+        <ThemeProvider theme={theme}>
             <TableContainer component={Paper}>
                 <Table size="small" aria-label="simple table">
                     <TableHead>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
     makeStyles,
     createMuiTheme,
@@ -9,29 +9,41 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
-const useStyles = makeStyles((theme) => ({
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 120,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
-}));
-
-const lightTheme = createMuiTheme({
-    palette: {
-        type: "light",
-    },
-});
-
-const darkTheme = createMuiTheme({
-    palette: {
-        type: "dark",
-    },
-});
+import ThemeContext from "../../../context/ThemeContext";
 
 function SimpleSelect(props) {
+    const context = useContext(ThemeContext);
+
+    const useStyles = makeStyles((theme) => ({
+        formControl: {
+            margin: theme.spacing(1),
+            minWidth: 120,
+        },
+        selectEmpty: {
+            marginTop: theme.spacing(2),
+        },
+    }));
+
+    const lightTheme = createMuiTheme({
+        palette: {
+            type: "light",
+        },
+    });
+
+    const darkTheme = createMuiTheme({
+        palette: {
+            type: "dark",
+        },
+    });
+
+    let theme;
+
+    if (context.theme === "light") {
+        theme = lightTheme;
+    } else {
+        theme = darkTheme;
+    }
+
     const classes = useStyles();
     const [value, setValue] = useState("");
 
@@ -52,7 +64,7 @@ function SimpleSelect(props) {
             <h1 className="pl-3 text-base font-light">
                 Search for {props.category}
             </h1>
-            <ThemeProvider theme={lightTheme}>
+            <ThemeProvider theme={theme}>
                 <FormControl
                     variant="filled"
                     className={[classes.formControl, "w-64"].join(" ")}

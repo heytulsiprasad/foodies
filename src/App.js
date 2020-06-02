@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import ThemeContext from "./context/ThemeContext";
 import FoodProvider from "./context/FoodProvider";
 import Page from "./containers/Page/Page";
 import Recipes from "./containers/Recipes/Recipes";
@@ -8,8 +9,15 @@ import Recipes from "./containers/Recipes/Recipes";
 import "./tailwind.generated.css";
 
 function App() {
+    const context = useContext(ThemeContext);
+
     return (
-        <div className="container main">
+        <div
+            className={[
+                `theme-${context.theme}`,
+                "container main bg-background-secondary",
+            ].join(" ")}
+        >
             <Router>
                 <FoodProvider>
                     <Switch>

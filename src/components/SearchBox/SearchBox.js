@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import ThemeContext from "../../context/ThemeContext";
 import "../../tailwind.generated.css";
 
 //////////////////// This is where the Search Takes Place
@@ -48,8 +49,16 @@ class SearchBox extends Component {
             },
         });
 
+        let theme;
+
+        if (this.context.theme === "light") {
+            theme = lightTheme;
+        } else {
+            theme = darkTheme;
+        }
+
         return (
-            <ThemeProvider theme={lightTheme}>
+            <ThemeProvider theme={theme}>
                 <form
                     onSubmit={this.handleFormSubmit}
                     className="w-3/4 sm:mx-auto sm:w-full"
@@ -74,5 +83,7 @@ class SearchBox extends Component {
         );
     }
 }
+
+SearchBox.contextType = ThemeContext;
 
 export default SearchBox;
