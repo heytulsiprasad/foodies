@@ -9,7 +9,7 @@ import "./tailwind.generated.css";
 
 function App() {
     return (
-        <div className="container main bg-background-secondary theme-light">
+        <div className="container main">
             <Router>
                 <FoodProvider>
                     <Switch>
@@ -21,4 +21,5 @@ function App() {
         </div>
     );
 }
+
 export default App;

@@ -7,10 +7,13 @@ class FoodProvider extends Component {
         super(props);
         this.updateMeals = this.updateMeals.bind(this);
         this.updateLoading = this.updateLoading.bind(this);
+        this.updateTheme = this.updateTheme.bind(this);
 
         this.state = {
+            theme: "light",
             meals: null,
             isLoading: false,
+            updateTheme: this.updateTheme,
             updateLoading: this.updateLoading,
             updateMeals: this.updateMeals,
         };
@@ -18,6 +21,10 @@ class FoodProvider extends Component {
 
     updateMeals(val) {
         this.setState(val);
+    }
+
+    updateTheme(val) {
+        this.setState({ theme: val });
     }
 
     updateLoading(val) {

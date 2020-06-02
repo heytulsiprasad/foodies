@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React, { useContext } from "react";
 
+import FoodContext from "../../context/FoodContext";
 import classes from "./Page.module.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Cards from "../Cards/Cards";
@@ -7,20 +8,20 @@ import NavBar from "../../components/NavBar/NavBar";
 import Hero from "../../components/Hero/Hero";
 import Footer from "../../components/Footer/Footer";
 
-class Page extends Component {
-    render() {
-        return (
-            <Fragment>
-                <div className={classes.Home}>
-                    <NavBar />
-                    <Hero />
-                </div>
-                <SearchBar />
-                <Cards />
-                <Footer />
-            </Fragment>
-        );
-    }
-}
+const Page = () => {
+    const context = useContext(FoodContext);
+
+    return (
+        <div className={`theme-${context.theme}`}>
+            <div className={classes.Home}>
+                <NavBar />
+                <Hero />
+            </div>
+            <SearchBar />
+            <Cards />
+            <Footer />
+        </div>
+    );
+};
 
 export default Page;
