@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import ThemeContext from "./context/ThemeContext";
-import FoodProvider from "./context/FoodProvider";
+import ThemeContext from "./context/ThemeContext/ThemeContext";
+import FoodProvider from "./context/FoodContext/FoodProvider";
 import Page from "./containers/Page/Page";
 import Recipes from "./containers/Recipes/Recipes";
 import PageNotFound from "./components/PageNotFound/PageNotFound";

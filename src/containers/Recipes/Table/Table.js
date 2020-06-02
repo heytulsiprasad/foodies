@@ -7,7 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import ThemeContext from "../../../context/ThemeContext";
+import ThemeContext from "../../../context/ThemeContext/ThemeContext";
 
 function createData(item, amount) {
     return { item, amount };

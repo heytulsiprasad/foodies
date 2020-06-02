@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 import Card from "./Card/Card";
 import classes from "./Cards.module.css";
-import FoodContext from "../../context/FoodContext";
-import ThemeContext from "../../context/ThemeContext";
+import FoodContext from "../../context/FoodContext/FoodContext";
+import ThemeContext from "../../context/ThemeContext/ThemeContext";
 
 function Cards() {
     const context = useContext(FoodContext);

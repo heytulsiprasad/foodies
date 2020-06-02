@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import ThemeContext from "../../context/ThemeContext";
+import ThemeContext from "../../context/ThemeContext/ThemeContext";
 import "../../tailwind.generated.css";
 
 //////////////////// This is where the Search Takes Place

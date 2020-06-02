@@ -3,7 +3,7 @@ import axios from "axios";
 
 import classes from "./Recipe.module.css";
 import Table from "../Table/Table";
-import ThemeContext from "../../../context/ThemeContext";
+import ThemeContext from "../../../context/ThemeContext/ThemeContext";
 
 function Recipe(props) {
     const context = useContext(ThemeContext);

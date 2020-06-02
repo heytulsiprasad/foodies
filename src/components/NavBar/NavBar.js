@@ -4,7 +4,7 @@ import Brightness3Icon from "@material-ui/icons/Brightness3";
 import Brightness5Icon from "@material-ui/icons/Brightness5";
 import { Link } from "react-router-dom";
 
-import ThemeContext from "../../context/ThemeContext";
+import ThemeContext from "../../context/ThemeContext/ThemeContext";
 import "../../tailwind.generated.css";
 
 function NavBar() {

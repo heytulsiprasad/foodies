@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import FoodContext from "../../context/FoodContext";
+import FoodContext from "../../context/FoodContext/FoodContext";
 import Button from "@material-ui/core/Button";
 import SearchIcon from "@material-ui/icons/Search";
 
