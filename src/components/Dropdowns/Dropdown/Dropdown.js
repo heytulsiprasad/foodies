@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+    makeStyles,
+    createMuiTheme,
+    ThemeProvider,
+} from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
@@ -14,6 +18,18 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(2),
     },
 }));
+
+const lightTheme = createMuiTheme({
+    palette: {
+        type: "light",
+    },
+});
+
+const darkTheme = createMuiTheme({
+    palette: {
+        type: "dark",
+    },
+});
 
 function SimpleSelect(props) {
     const classes = useStyles();
@@ -32,35 +48,37 @@ function SimpleSelect(props) {
     };
 
     return (
-        <div className={props.spacing}>
+        <div className={[props.spacing, "text-copy-primary"].join(" ")}>
             <h1 className="pl-3 text-base font-light">
                 Search for {props.category}
             </h1>
-            <FormControl
-                variant="filled"
-                className={[classes.formControl, "w-64"].join(" ")}
-            >
-                <InputLabel id="demo-simple-select-filled-label">
-                    {props.category}
-                </InputLabel>
-                <Select
-                    labelId="demo-simple-select-filled-label"
-                    id="demo-simple-select-filled"
-                    value={value}
-                    onChange={handleChange}
+            <ThemeProvider theme={lightTheme}>
+                <FormControl
+                    variant="filled"
+                    className={[classes.formControl, "w-64"].join(" ")}
                 >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    {props.items.map((item, index) => {
-                        return (
-                            <MenuItem key={index} value={item}>
-                                {item}
-                            </MenuItem>
-                        );
-                    })}
-                </Select>
-            </FormControl>
+                    <InputLabel id="demo-simple-select-filled-label">
+                        {props.category}
+                    </InputLabel>
+                    <Select
+                        labelId="demo-simple-select-filled-label"
+                        id="demo-simple-select-filled"
+                        value={value}
+                        onChange={handleChange}
+                    >
+                        <MenuItem className="bg-background-tertiary" value="">
+                            <em>None</em>
+                        </MenuItem>
+                        {props.items.map((item, index) => {
+                            return (
+                                <MenuItem key={index} value={item}>
+                                    {item}
+                                </MenuItem>
+                            );
+                        })}
+                    </Select>
+                </FormControl>
+            </ThemeProvider>
         </div>
     );
 }

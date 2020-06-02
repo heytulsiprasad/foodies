@@ -25,6 +25,7 @@ module.exports = {
             copy: {
                 primary: "var(--text-copy-primary)",
                 secondary: "var(--text-copy-secondary)",
+                white: "var(--text-copy-white)",
             },
         },
     },

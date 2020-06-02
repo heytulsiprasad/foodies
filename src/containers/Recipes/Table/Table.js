@@ -1,5 +1,6 @@
 import React from "react";
 import Table from "@material-ui/core/Table";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
@@ -18,27 +19,37 @@ function SimpleTable(props) {
         rows.push(createData(i[0], i[1]));
     });
 
+    const darkTheme = createMuiTheme({
+        palette: {
+            type: "dark",
+        },
+    });
+
     return (
-        <TableContainer component={Paper}>
-            <Table size="small" aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Ingredients</TableCell>
-                        <TableCell align="right">Amount</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row, index) => (
-                        <TableRow key={index}>
-                            <TableCell component="th" scope="row">
-                                {row.item}
-                            </TableCell>
-                            <TableCell align="right">{row.amount}</TableCell>
+        <ThemeProvider theme={darkTheme}>
+            <TableContainer component={Paper}>
+                <Table size="small" aria-label="simple table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Ingredients</TableCell>
+                            <TableCell align="right">Amount</TableCell>
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                    </TableHead>
+                    <TableBody>
+                        {rows.map((row, index) => (
+                            <TableRow key={index}>
+                                <TableCell component="th" scope="row">
+                                    {row.item}
+                                </TableCell>
+                                <TableCell align="right">
+                                    {row.amount}
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </ThemeProvider>
     );
 }
 

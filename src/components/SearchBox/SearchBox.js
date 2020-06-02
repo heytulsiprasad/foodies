@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import "../../tailwind.generated.css";
+
+//////////////////// This is where the Search Takes Place
 
 class SearchBox extends Component {
     constructor(props) {
@@ -33,32 +36,41 @@ class SearchBox extends Component {
     }
 
     render() {
+        const darkTheme = createMuiTheme({
+            palette: {
+                type: "dark",
+            },
+        });
+
+        const lightTheme = createMuiTheme({
+            palette: {
+                type: "light",
+            },
+        });
+
         return (
-            <form
-                onSubmit={this.handleFormSubmit}
-                className="w-3/4 sm:mx-auto sm:w-full"
-                autoComplete="off"
-            >
-                <TextField
-                    id="outlined-full-width"
-                    label="Search for Food"
-                    className="bg-background-primary"
-                    style={{
-                        borderRadius: "5px",
-                        height: "55%",
-                    }}
-                    placeholder="Let's see what you eat!"
-                    value={this.state.val}
-                    onChange={(e) => this.textChangeHandler(e)}
-                    helperText="Whatever that makes your jaw drop!"
-                    fullWidth
-                    margin="normal"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    variant="outlined"
-                />
-            </form>
+            <ThemeProvider theme={lightTheme}>
+                <form
+                    onSubmit={this.handleFormSubmit}
+                    className="w-3/4 sm:mx-auto sm:w-full"
+                    autoComplete="off"
+                >
+                    <TextField
+                        id="outlined-full-width"
+                        label="Search for Food"
+                        placeholder="Let's see what you eat!"
+                        value={this.state.val}
+                        onChange={(e) => this.textChangeHandler(e)}
+                        helperText="Whatever that makes your jaw drop!"
+                        fullWidth
+                        margin="normal"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        variant="outlined"
+                    />
+                </form>
+            </ThemeProvider>
         );
     }
 }

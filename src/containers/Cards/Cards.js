@@ -10,7 +10,14 @@ class Cards extends Component {
         let foods;
 
         if (this.context.meals === null || this.context.meals === undefined) {
-            foods = "Nothing to display 👀";
+            foods = (
+                <p className="text-copy-primary">
+                    Nothing to display{" "}
+                    <span role="img" aria-label="emoji">
+                        👀
+                    </span>
+                </p>
+            );
         } else {
             foods = this.context.meals.map((food) => {
                 let tags = ["Yummy"];
@@ -39,9 +46,9 @@ class Cards extends Component {
         if (this.context.isLoading === true) {
             foods = (
                 <div
+                    style={{ color: "#fff" }}
                     className={[
                         classes.LaSquareSpin,
-                        classes.LaDark,
                         classes.La2x,
                         "mx-auto",
                     ].join(" ")}

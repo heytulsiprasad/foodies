@@ -34,10 +34,6 @@
     color: #fff;
 }
 
-.LaSquareSpin.LaDark {
-    color: #333;
-}
-
 .LaSquareSpin > div {
     display: inline-block;
     float: none;

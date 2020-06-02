@@ -3,6 +3,8 @@ import SearchBox from "../SearchBox/SearchBox";
 import SearchBtn from "../Buttons/SearchBtn";
 import Dropdowns from "../Dropdowns/Dropdowns";
 
+//////////////////// This includes the search box and its button
+
 function SearchBar(props) {
     const [search, setSearch] = useState(null);
     const [searchActive, setSearchActive] = useState(null);
