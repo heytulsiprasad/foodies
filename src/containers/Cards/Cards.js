@@ -21,7 +21,7 @@ function Cards() {
 
     if (context.meals === null || context.meals === undefined) {
         foods = (
-            <p className="text-copy-primary">
+            <p className="text-copy-primary sm:mx-auto">
                 Nothing to display{" "}
                 <span role="img" aria-label="emoji">
                     👀

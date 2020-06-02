@@ -5,6 +5,7 @@ import ThemeContext from "./context/ThemeContext";
 import FoodProvider from "./context/FoodProvider";
 import Page from "./containers/Page/Page";
 import Recipes from "./containers/Recipes/Recipes";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 import "./tailwind.generated.css";
 
@@ -23,6 +24,7 @@ function App() {
                     <Switch>
                         <Route path="/" exact component={Page} />
                         <Route path="/food/:id" component={Recipes} />
+                        <Route component={PageNotFound} />
                     </Switch>
                 </FoodProvider>
             </Router>

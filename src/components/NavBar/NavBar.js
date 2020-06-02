@@ -42,7 +42,7 @@ function NavBar() {
 
     return (
         <nav className="bg-background-tertiary text-copy-primary px-12 flex items-center justify-between flex-wrap bg-gray-800 p-6">
-            <div className="flex items-center  hover:text-copy-secondary flex-shrink-0 text-white mr-6">
+            <div className="flex items-center hover:text-copy-secondary flex-shrink-0 text-white mr-6">
                 <Link to="/">
                     <span
                         className="inline-block relative"
