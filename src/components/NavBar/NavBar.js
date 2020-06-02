@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, Fragment } from "react";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
 import Brightness5Icon from "@material-ui/icons/Brightness5";
@@ -9,27 +9,26 @@ import "../../tailwind.generated.css";
 
 function NavBar() {
     const context = useContext(ThemeContext);
-    console.log(context);
 
     let mode;
 
     if (context.theme === "light") {
         mode = (
-            <div>
+            <Fragment>
                 <span className="mr-1">
                     <Brightness3Icon />
                 </span>
                 Dark Mode
-            </div>
+            </Fragment>
         );
     } else if (context.theme === "dark") {
         mode = (
-            <div>
+            <Fragment>
                 <span className="mr-1">
                     <Brightness5Icon />
                 </span>
                 Light Mode
-            </div>
+            </Fragment>
         );
     }
 
@@ -60,7 +59,7 @@ function NavBar() {
                 <div className="text-md flex-grow text-right">
                     <button
                         onClick={themeChanger}
-                        className="block outline-none border-none hover:text-copy-secondary inline-block xl:mt-0 text-teal-200 hover:text-white"
+                        className="outline-none focus:outline-none border-none hover:text-copy-secondary"
                     >
                         {mode}
                     </button>
