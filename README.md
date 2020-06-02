@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting your food right on time ⏲
 
-## Available Scripts
+No more waiting to get the right choice of recipe and spending lots of time searching Youtube on the right video to show how to make it.
+It's all here now.
+**Foodies** is the home of more than _thousands_ of recipes that are listed on basis of various regions and categories, which
+you can take advantage of to find THE one you're looking for, almost instantaneously. Give this a ⭐ if you liked!
 
-In the project directory, you can run:
+[![Cover Page of Foodies](/src/assets/foodies4.png "Cover Page")](https://foodies-sandy.now.sh/)
 
-### `yarn start`
+The power of your favourite recipes, now with jaw-dropping UI and themes that you just can't stop looking at. All at the cost of nothing.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Visit [Foodies](https://foodies-sandy.now.sh/), today!
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[![Recipe List of Ingredients](/src/assets/foodies3.png "Recipe List of Ingredients")](https://foodies-sandy.now.sh/)
 
-### `yarn test`
+## 🏭 Contribute
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is one of my side projects which I made to learn the following:
 
-### `yarn build`
+-   React (Fundamentals)
+-   Context API (For state management)
+-   Tailwind CSS (An utility first CSS Framework)
+-   Material UI (A set of pre-made react components)
+-   And many little things...
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+So, if you're into any of those or want to go into in future, **this project is dedicated to you.** Give this a ⭐ if you liked!
+Go ahead and rip this project apart to learn tidbits of each of the things I mentioned above. I'll make sure to comment as much as possible
+to make you get started, ASAP. But still, if you have even silliest of questions or suggestions, do create an issue here or tweet me [@heytulsiprasad](https://twitter.com/heytulsiprasad), so that it can help everybody.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[![Grid showing search results](/src/assets/foodies2.png "Grid showing search results")](https://foodies-sandy.now.sh/)
+[![Embeded video from Youtube](/src/assets/foodies1.png "Embeded video from Youtube")](https://foodies-sandy.now.sh/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎉 Get started to rip apart the project
 
-### `yarn eject`
+Make sure you fork it, to make your copy of the repo.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`git clone https://github.com/heytulsiprasad/foodies.git`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Now it's damn easy. However, I used _Yarn_ in this project, make sure to install that before anything else.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm install -g yarn
+yarn
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**P.S.**: `yarn` commmand is same as `npm install`. It downloads all your dependencies to make your setup ready.
 
-## Learn More
+## 🌈 Thanks a thousand
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+And of course, this couldn't have been possible without the great _free to use_ API called, **MealDB**. You can give that a look on [here](https://www.themealdb.com/api.php).
+Their service has been amazing throughout and you can use their API to create your own projects too!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔥 Now, go set the world on fire
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Now that's for all. Give me a follow on Twitter, [@heytulsiprasad](https://twitter.com/heytulsiprasad) if you're into this kind of stuff.
+I am constantly spreading out tips and tricks as well as written articles for the developer community. I'll be glad to add you to my family!
