@@ -1,4 +1,13 @@
-# Getting your food right on time ⏲
+<br />
+
+<p align="center">
+  <a href="https://foodies-sandy.now.sh/">
+    <img src="https://www.freelogodesign.org/file/app/client/thumb/9fcf8e87-e4e3-4d1f-943c-247543adc183_200x200.png?1595280889786" alt="Foodies Logo">
+  </a>
+
+  <h3 align="center">To eat or not to eat, is the question. 🍕</h3>
+
+# Foodies — Delicious Recipes App
 
 No more waiting to get the right choice of recipe and spending lots of time searching Youtube on the right video to show how to make it.
 It's all here now.
