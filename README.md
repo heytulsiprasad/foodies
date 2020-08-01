@@ -30,7 +30,7 @@ This is one of my side projects which I made to learn the following:
 -   Context API (For state management)
 -   Tailwind CSS (An utility first CSS Framework)
 -   Material UI (A set of pre-made react components)
--   And many little things...
+-   And many little _reacty_ things...
 
 So, if you're into any of those or want to go into in future, **this project is dedicated to you.** Give this a ⭐ if you liked!
 Go ahead and rip this project apart to learn tidbits of each of the things I mentioned above. I'll make sure to comment as much as possible
@@ -39,20 +39,27 @@ to make you get started, ASAP. But still, if you have even silliest of questions
 [![Grid showing search results](/src/assets/foodies2.png "Grid showing search results")](https://foodies-sandy.now.sh/)
 [![Embeded video from Youtube](/src/assets/foodies1.png "Embeded video from Youtube")](https://foodies-sandy.now.sh/)
 
-## 🎉 Get started to rip apart the project
+## 🎉 Getting Started
 
 Make sure you fork it, to make your copy of the repo.
 
 `git clone https://github.com/heytulsiprasad/foodies.git`
 
-Now it's damn easy. However, I used _Yarn_ in this project, make sure to install that before anything else.
+Now it's damn easy.
 
-```
-npm install -g yarn
-yarn
-```
+**Install the dependencies (using `npm` or `yarn`**
 
-**P.S.**: `yarn` commmand is same as `npm install`. It downloads all your dependencies to make your setup ready.
+- Using `npm`: `npm install`
+- Using `yarn`: `yarn`
+
+**Starting project locally**
+
+`npm run start` or `yarn start`
+
+**Extra information**
+
+- You can run `start` command just to run the react project and see how it works.
+- You have to run `dev` command if you want to fiddle with the **tailwind classnames** as it needs to be processed (or watched).
 
 ## 🌈 Thanks a thousand
 
@@ -62,4 +69,4 @@ Their service has been amazing throughout and you can use their API to create yo
 ## 🔥 Now, go set the world on fire
 
 Now that's for all. Give me a follow on Twitter, [@heytulsiprasad](https://twitter.com/heytulsiprasad) if you're into this kind of stuff.
-I am constantly spreading out tips and tricks as well as written articles for the developer community. I'll be glad to add you to my family!
+I am constantly spreading out tips and tricks as well as written articles for the developer community. I'll be glad to share them with you 💙
