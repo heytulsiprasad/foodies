@@ -14,30 +14,30 @@ It's all here now.
 **Foodies** is the home of more than _thousands_ of recipes that are listed on basis of various regions and categories, which
 you can take advantage of to find THE one you're looking for, almost instantaneously. Give this a ⭐ if you liked!
 
-[![Cover Page of Foodies](/src/assets/foodies4.png "Cover Page")](https://foodies-sandy.now.sh/)
+[![Cover Page of Foodies](https://i.imgur.com/RTfPTxW.png)](https://foodies-sandy.now.sh/)
 
 The power of your favourite recipes, now with jaw-dropping UI and themes that you just can't stop looking at. All at the cost of nothing.
 
 Visit [Foodies](https://foodies-sandy.now.sh/), today!
 
-[![Recipe List of Ingredients](/src/assets/foodies3.png "Recipe List of Ingredients")](https://foodies-sandy.now.sh/)
+[![Recipe List of Ingredients](https://i.imgur.com/fhLL56V.png)](https://foodies-sandy.now.sh/)
 
 ## 🏭 Contribute
 
 This is one of my side projects which I made to learn the following:
 
--   React (Fundamentals)
--   Context API (For state management)
--   Tailwind CSS (An utility first CSS Framework)
--   Material UI (A set of pre-made react components)
--   And many little _reacty_ things...
+- React (Fundamentals)
+- Context API (For state management)
+- Tailwind CSS (An utility first CSS Framework)
+- Material UI (A set of pre-made react components)
+- And many little _reacty_ things...
 
 So, if you're into any of those or want to go into in future, **this project is dedicated to you.** Give this a ⭐ if you liked!
 Go ahead and rip this project apart to learn tidbits of each of the things I mentioned above. I'll make sure to comment as much as possible
 to make you get started, ASAP. But still, if you have even silliest of questions or suggestions, do create an issue here or tweet me [@heytulsiprasad](https://twitter.com/heytulsiprasad), so that it can help everybody.
 
-[![Grid showing search results](/src/assets/foodies2.png "Grid showing search results")](https://foodies-sandy.now.sh/)
-[![Embeded video from Youtube](/src/assets/foodies1.png "Embeded video from Youtube")](https://foodies-sandy.now.sh/)
+[![Grid showing search results](https://i.imgur.com/5UTaVlZ.png)](https://foodies-sandy.now.sh/)
+[![Embeded video from Youtube](https://i.imgur.com/FzD8d70.png)](https://foodies-sandy.now.sh/)
 
 ## 🎉 Getting Started
 
