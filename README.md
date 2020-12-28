@@ -61,6 +61,10 @@ Now it's damn easy.
 - You can run `start` command just to run the react project and see how it works.
 - You have to run `dev` command if you want to fiddle with the **tailwind classnames** as it needs to be processed (or watched).
 
+## :ledger: Related posts by me
+
+- [Adding Tailwind into React project in under a minute](https://dev.to/heytulsiprasad/adding-tailwind-into-react-project-in-under-a-minute-41jp)
+
 ## 🌈 Thanks a thousand
 
 And of course, this couldn't have been possible without the great _free to use_ API called, **MealDB**. You can give that a look on [here](https://www.themealdb.com/api.php).
